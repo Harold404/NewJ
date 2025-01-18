@@ -1,5 +1,530 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {}
+    "点击明日方舟": {
+        "recognition": "FeatureMatch",
+        "template": "z.png",
+        "action": "Click",
+        "next": "Click start"
+        },
+    "Click start": {
+        "recognition": "FeatureMatch",
+        "template": "start.png",
+        "action": "Click",
+        "next": "进入游戏"
+        },
+    "进入游戏": {
+        "recognition": "OCR",
+        "expected": "开始唤醒",
+        "action": "Click"
+        },
+    "X": {
+        "recognition": "TemplateMatch",
+        "template": "X.png",
+        "threshold": 0.4,
+        "action": "Click"
+    },
+    "全部完成": {
+        "recognition": "OCR",
+        "expected": "全部完成",
+        "action": "Click"
+    },
+    "JC": {
+        "recognition": "OCR",
+        "expected": "萨卡兹的无终奇语",
+        "action": "Click",
+        "next": "参数启用与否"
+    },
+
+    "参数启用与否": {
+        "next": [
+            "参数已启用",
+            "启用参数"
+        ]
+    },
+
+    "参数已启用": {
+        "recognition": "OCR",
+        "expected": "参数已启用",
+        "action": "Click",
+        "next": "停用参数"
+    },
+
+    "停用参数": {
+        "recognition": "OCR",
+        "expected": "停用参数",
+        "action": "Click",
+        "next": "填写参数以开启预设局"
+    },
+    "启用参数": {
+        "recognition": "OCR",
+        "expected": "启用参数",
+        "action": "Click",
+        "next": "填写参数以开启预设局"
+    },
+    "填写参数以开启预设局": {
+        "recognition": "OCR",
+        "expected": "填写参数以开启预设局",
+        "action": "Click",
+        "next": "请输入或粘贴预设参数"
+    },
+    "请输入或粘贴预设参数": {
+        "recognition": "OCR",
+        "expected": "请输入或粘贴预设参数",
+        "action": "Click",
+        "next": "输入种子"
+    },
+    "输入种子": {
+        "recognition": "OCR",
+        "expected": "请输入或粘贴预设参数",
+        "action": "InputText",
+        "input_text": "[U1eIA1I29844Ae925i,rogue_4,6]##复制本信息到萨卡兹的无终奇语预设参数，立即体验预设局",
+        "next": "Confirm_1"
+    },
+    "Confirm_1": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "action": "Click",
+        "next": "Confirm_2"
+    },
+    "Confirm_2": {
+        "recognition": "FeatureMatch",
+        "template": "确认输入种子.png",
+        "action": "Click",
+        "next": "难度判断"
+    },
+
+
+    "难度判断": {
+    "next": [
+        "已设为该难度",
+        "设为该难度"
+        ]
+    },
+    "已设为该难度": {
+        "recognition": "OCR",
+        "expected": "已设为该难度",
+        "next": "回集主界面"
+    },
+    "设为该难度": {
+        "recognition": "OCR",
+        "expected": "设为该难度",
+        "action": "Click",
+        "next": "回集主界面"
+    },
+    "回集主界面": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": [
+            "开始探险",
+            "回集主界面"
+        ]
+    },
+
+    "开始探险": {
+        "recognition": "OCR",
+        "expected": "开始探险",
+        "action": "Click",
+        "next": "pre_wait_freezes0"
+    },
+    "pre_wait_freezes0": {
+        "pre_wait_freezes": 400,
+        "next": "滑动"
+    },
+    "滑动": {
+        "action": "Swipe",
+        "begin": [
+            966, 366, 150, 30
+        ],
+        "end": [
+            716, 366, 150, 30
+        ],
+        "next": "pre_wait_freezes1"
+    },
+
+    "pre_wait_freezes1": {
+        "pre_wait_freezes": 1000,
+        "next": [
+            "后勤分队",
+            "滑动"
+        ]
+    },
+    "后勤分队": {
+        "recognition": "OCR",
+        "expected": "后勤分队",
+        "action": "Click",
+        "next": "你确定要这么做1"
+    },
+    "你确定要这么做1": {
+        "recognition": "OCR",
+        "expected": "你确定要这么做",
+        "action": "Click",
+        "next": "随心所欲"
+    },
+    "随心所欲": {
+        "recognition": "OCR",
+        "expected": "随心所欲",
+        "action": "Click",
+        "next": "你确定要这么做2"
+    },
+    "你确定要这么做2": {
+        "recognition": "OCR",
+        "expected": "你确定要这么做",
+        "action": "Click",
+        "next": "近卫"
+    },
+
+    "近卫": {
+        "recognition": "OCR",
+        "expected": "招募一个近卫",
+        "action": "Click",
+        "next": "放弃1"
+    },
+    "放弃1": {
+        "recognition": "OCR",
+        "expected": "放弃",
+        "action": "Click",
+        "next": "确认放弃1"
+    },
+    "确认放弃1": {
+        "recognition": "FeatureMatch",
+        "template": "确认放弃.png",
+        "action": "Click",
+        "next": "重装"
+    },
+
+    "重装": {
+        "recognition": "OCR",
+        "expected": "招募一个重装",
+        "action": "Click",
+        "next": "放弃2"
+    },
+    "放弃2": {
+        "recognition": "OCR",
+        "expected": "放弃",
+        "action": "Click",
+        "next": "确认放弃2"
+    },
+    "确认放弃2": {
+        "recognition": "FeatureMatch",
+        "template": "确认放弃.png",
+        "action": "Click",
+        "next": "术师"
+    },
+
+    "术师": {
+        "recognition": "OCR",
+        "expected": "招募一个术师",
+        "action": "Click",
+        "next": "放弃3"
+    },
+    "放弃3": {
+        "recognition": "OCR",
+        "expected": "放弃",
+        "action": "Click",
+        "next": "确认放弃3"
+    },
+    "确认放弃3": {
+        "recognition": "FeatureMatch",
+        "template": "确认放弃.png",
+        "action": "Click",
+        "next": "开始讲述"
+    },
+
+
+    "开始讲述": {
+        "recognition": "OCR",
+        "expected": "讲述",
+        "action": "Click",
+        "next": "pre_wait_freezes2"
+    },
+    "pre_wait_freezes2": {
+        "pre_wait_freezes": 1000,
+        "next": "坏邻居"
+    },
+    "坏邻居": {
+        "recognition": "OCR",
+        "expected": "坏邻居",
+        "action": "Click",
+        "next": "刷新"
+    },
+    "刷新": {
+        "recognition": "OCR",
+        "expected": "刷新",
+        "action": "Click",
+        "next": "确定"
+    },
+    "确定": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "action": "Click",
+        "next": "节点一"
+    },
+    "节点一": {
+        "recognition": "FeatureMatch",
+        "template": "不期而遇.png",
+        "action": "Click",
+        "next": "出发前往"
+    },
+    "出发前往": {
+        "recognition": "OCR",
+        "expected": "出发前往",
+        "action": "Click",
+        "next": "快进1"
+    },
+    "快进1": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "节点一选择1"
+    },
+    "节点一选择1": {
+        "recognition": "OCR",
+        "expected": "从中寻找有用的物件",
+        "action": "Click",
+        "next": "节点一选择2"
+    },
+    "节点一选择2": {
+        "recognition": "OCR",
+        "expected": "确定这么做",
+        "action": "Click",
+        "next": "回一层主界面1"
+    },
+    "回一层主界面1": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "再度确认回到主界面1"
+    },
+    "再度确认回到主界面1": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "pre_wait_freezes3"
+    },
+
+
+
+    "pre_wait_freezes3": {
+        "pre_wait_freezes": 1000,
+        "next": "滑动2"
+    },
+    "滑动2": {
+        "action": "Swipe",
+        "begin": [
+            966, 366, 150, 30
+        ],
+        "end": [
+            716, 366, 150, 30
+        ],
+        "next": "pre_wait_freezes4"
+    },
+    "pre_wait_freezes4": {
+        "pre_wait_freezes": 1000,
+        "next": "节点二"
+    },
+    "节点二": {
+        "recognition": "TemplateMatch",
+        "template": "不期而遇.png",
+        "index": 0,
+        "action": "Click",
+        "next": "出发前往2"
+    },
+    "出发前往2": {
+        "recognition": "OCR",
+        "expected": "出发前往",
+        "action": "Click",
+        "next": "快进2"
+    },
+    "快进2": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "节点二选择1"
+    },
+    "节点二选择1": {
+        "recognition": "OCR",
+        "expected": "美愿时代的留恋",
+        "action": "Click",
+        "next": "节点二选择2"
+    },
+    "节点二选择2": {
+        "recognition": "OCR",
+        "expected": "确定这么做",
+        "action": "Click",
+        "next": "回一层主界面2"
+    },
+    "回一层主界面2": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "再度确认回到主界面2"
+    },
+    "再度确认回到主界面2": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "pre_wait_freezes5"
+    },
+
+
+    "pre_wait_freezes5": {
+        "pre_wait_freezes": 1000,
+        "next": "滑动3"
+    },
+    "滑动3": {
+        "action": "Swipe",
+        "begin": [
+            966, 366, 150, 30
+        ],
+        "end": [
+            716, 366, 150, 30
+        ],
+        "next": "pre_wait_freezes6"
+    },
+    "pre_wait_freezes6": {
+        "pre_wait_freezes": 1000,
+        "next": "节点三"
+    },
+    "节点三": {
+        "recognition": "TemplateMatch",
+        "template": "不期而遇.png",
+        "index": 0,
+        "action": "Click",
+        "next": "出发前往3"
+    },
+    "出发前往3": {
+        "recognition": "OCR",
+        "expected": "出发前往",
+        "action": "Click",
+        "next": "快进3"
+    },
+    "快进3": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "节点三选择1"
+    },
+    "节点三选择1": {
+        "recognition": "OCR",
+        "expected": "多一事不如少一事",
+        "action": "Click",
+        "next": "节点三选择2"
+    },
+    "节点三选择2": {
+        "recognition": "OCR",
+        "expected": "确定这么做",
+        "action": "Click",
+        "next": "回一层主界面3"
+    },
+    "回一层主界面3": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "回一层主界面4"
+    },
+    "回一层主界面4": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": "诡意行商"
+    },
+
+
+
+    "诡意行商": {
+        "recognition": "OCR",
+        "expected": "诡意行商",
+        "action": "Click",
+        "next": "出发前往4"
+    },
+    "出发前往4": {
+        "recognition": "OCR",
+        "expected": "出发前往",
+        "action": "Click",
+        "next": "当前余额"
+    },
+    "当前余额": {
+        "recognition": "OCR",
+        "expected": "当前余额",
+        "action": "Click",
+        "next": "投资入口"
+    },
+    "投资入口": {
+        "recognition": "OCR",
+        "expected": "投资入口",
+        "action": "Click",
+        "next": "确认投资"
+    },
+    "确认投资": {
+        "recognition": "OCR",
+        "expected": "确认投资",
+        "action": "Click",
+        "next": "pre_wait_freezes7"
+    },
+    "pre_wait_freezes7": {
+        "pre_wait_freezes": 5,
+        "next": [
+            "源石锭不足",
+            "本次探索无法再使用",
+            "确认投资",
+            "pre_wait_freezes5"
+        ]
+    },
+    "源石锭不足": {
+        "recognition": "OCR",
+        "expected": "源石锭不足",
+        "next": "算了"
+    },
+    "本次探索无法再使用": {
+        "recognition": "OCR",
+        "expected": "本次探索无法再使用",
+        "next": "算了"
+    },
+    "算了": {
+        "action": "Click",
+        "next": "算了2"
+    },
+    "算了2": {
+        "action": "Click",
+        "next": "退出商店"
+    },
+    "退出商店": {
+        "recognition": "FeatureMatch",
+        "template": "退出商店.png",
+        "action": "Click",
+        "next": "放弃本次探索"
+    },
+    "放弃本次探索": {
+        "recognition": "OCR",
+        "expected": "放弃本次探索",
+        "action": "Click",
+        "next": "确认放弃4"
+    },
+    "确认放弃4": {
+        "recognition": "FeatureMatch",
+        "template": "确认放弃.png",
+        "action": "Click",
+        "next": "结算页面"
+    },
+
+    "结算页面": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": [
+            "启用参数",
+            "结算页面"
+        ]
+    }
 }
