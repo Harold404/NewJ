@@ -136,8 +136,4 @@ Win10 或者 Win11 系统自带了一份 "Python"，但它其实只是一个安�
 
 感谢以下开发者对本项目作出的贡献（下面链接改成你自己的项目地址）:
 
-<<<<<<< HEAD
 [![Contributors](https://contrib.rocks/image?repo=MaaXYZ/MaaFramework&max=1000)](https://github.com/Harold404/NewJ.git)
-=======
-[[![Contributors](https://contrib.rocks/image?repo=MaaXYZ/MaaFramework&max=1000)]([https://github.com/Harold404/NewJ.git]))]
->>>>>>> d7ced6a15c4e9c1008d3924c5c20eb79b4868c2d
