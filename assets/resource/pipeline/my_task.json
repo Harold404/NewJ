@@ -431,7 +431,6 @@
     "节点三": {
         "recognition": "TemplateMatch",
         "template": "不期而遇.png",
-        "index": 0,
         "action": "Click",
         "next": "出发前往3"
     },
@@ -513,7 +512,7 @@
             "源石锭不足",
             "本次探索无法再使用",
             "确认投资",
-            "pre_wait_freezes5"
+            "pre_wait_freezes7"
         ]
     },
     "源石锭不足": {
