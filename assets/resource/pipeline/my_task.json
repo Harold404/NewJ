@@ -49,17 +49,20 @@
         "action": "Click",
         "next": "停用参数"
     },
-
     "停用参数": {
         "recognition": "OCR",
         "expected": "停用参数",
         "action": "Click",
-        "next": "填写参数以开启预设局"
+        "next": "wait"
     },
     "启用参数": {
         "recognition": "OCR",
         "expected": "启用参数",
         "action": "Click",
+        "next": "wait"
+    },
+    "wait": {
+        "pre_wait_freezes": 5,
         "next": "填写参数以开启预设局"
     },
     "填写参数以开启预设局": {
@@ -173,13 +176,22 @@
         "recognition": "OCR",
         "expected": "你确定要这么做",
         "action": "Click",
-        "next": "近卫"
+        "next": "wait0"
     },
 
+
+    "wait0": {
+        "pre_wait_freezes": 5,
+        "next": "近卫"
+    },
     "近卫": {
         "recognition": "OCR",
         "expected": "招募一个近卫",
         "action": "Click",
+        "next": "放弃1"
+    },
+    "wait1": {
+        "pre_wait_freezes": 5,
         "next": "放弃1"
     },
     "放弃1": {
@@ -192,13 +204,22 @@
         "recognition": "FeatureMatch",
         "template": "确认放弃.png",
         "action": "Click",
-        "next": "重装"
+        "next": "wait2"
     },
 
+
+    "wait2": {
+        "pre_wait_freezes": 5,
+        "next": "重装"
+    },
     "重装": {
         "recognition": "OCR",
         "expected": "招募一个重装",
         "action": "Click",
+        "next": "放弃2"
+    },
+    "wait3": {
+        "pre_wait_freezes": 5,
         "next": "放弃2"
     },
     "放弃2": {
@@ -211,13 +232,22 @@
         "recognition": "FeatureMatch",
         "template": "确认放弃.png",
         "action": "Click",
-        "next": "术师"
+        "next": "wait4"
     },
 
+
+    "wait4": {
+        "pre_wait_freezes": 5,
+        "next": "术师"
+    },
     "术师": {
         "recognition": "OCR",
         "expected": "招募一个术师",
         "action": "Click",
+        "next": "放弃3"
+    },
+    "wait5": {
+        "pre_wait_freezes": 5,
         "next": "放弃3"
     },
     "放弃3": {
@@ -230,10 +260,14 @@
         "recognition": "FeatureMatch",
         "template": "确认放弃.png",
         "action": "Click",
-        "next": "开始讲述"
+        "next": "wait6"
     },
 
 
+    "wait6": {
+        "pre_wait_freezes": 5,
+        "next": "开始讲述"
+    },
     "开始讲述": {
         "recognition": "OCR",
         "expected": "讲述",
