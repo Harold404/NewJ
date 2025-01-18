@@ -14,18 +14,22 @@
     "进入游戏": {
         "recognition": "OCR",
         "expected": "开始唤醒",
-        "action": "Click"
+        "action": "Click",
+        "next": "X"
         },
     "X": {
         "recognition": "TemplateMatch",
         "template": "X.png",
         "threshold": 0.4,
-        "action": "Click"
+        "action": "Click",
+        "next": "全部完成"
     },
+
     "全部完成": {
         "recognition": "OCR",
         "expected": "全部完成",
-        "action": "Click"
+        "action": "Click",
+        "next": "JC"
     },
     "JC": {
         "recognition": "OCR",
@@ -33,14 +37,12 @@
         "action": "Click",
         "next": "参数启用与否"
     },
-
     "参数启用与否": {
         "next": [
             "参数已启用",
             "启用参数"
         ]
     },
-
     "参数已启用": {
         "recognition": "OCR",
         "expected": "参数已启用",
