@@ -1,7 +1,7 @@
 {
     "controller": [
         {
-            "name": "安卓端",
+            "name": "MuMu模拟器端",
             "type": "Adb"
         },
         {
