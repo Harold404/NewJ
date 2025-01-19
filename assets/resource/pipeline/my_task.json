@@ -150,9 +150,15 @@
     "pre_wait_freezes1": {
         "pre_wait_freezes": 1000,
         "next": [
+            "选择支援",
             "后勤分队",
             "滑动"
         ]
+    },
+    "选择支援": {
+        "recognition": "OCR",
+        "expected": "选择支援",
+        "next": "退出商店"
     },
     "后勤分队": {
         "recognition": "OCR",
