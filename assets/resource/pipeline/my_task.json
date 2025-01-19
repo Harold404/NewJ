@@ -62,7 +62,7 @@
         "next": "wait"
     },
     "wait": {
-        "pre_wait_freezes": 5,
+        "pre_wait_freezes": 10,
         "next": "填写参数以开启预设局"
     },
     "填写参数以开启预设局": {
@@ -181,23 +181,27 @@
 
 
     "wait0": {
-        "pre_wait_freezes": 5,
+        "pre_wait_freezes": 10,
         "next": "近卫"
     },
     "近卫": {
         "recognition": "OCR",
         "expected": "招募一个近卫",
         "action": "Click",
-        "next": "放弃1"
+        "next": "wait1"
     },
     "wait1": {
-        "pre_wait_freezes": 5,
+        "pre_wait_freezes": 10,
         "next": "放弃1"
     },
     "放弃1": {
         "recognition": "OCR",
         "expected": "放弃",
         "action": "Click",
+        "next": "waitFq1"
+    },
+    "waitFq1": {
+        "pre_wait_freezes": 15,
         "next": "确认放弃1"
     },
     "确认放弃1": {
@@ -209,23 +213,27 @@
 
 
     "wait2": {
-        "pre_wait_freezes": 5,
+        "pre_wait_freezes": 10,
         "next": "重装"
     },
     "重装": {
         "recognition": "OCR",
         "expected": "招募一个重装",
         "action": "Click",
-        "next": "放弃2"
+        "next": "wait3"
     },
     "wait3": {
-        "pre_wait_freezes": 5,
+        "pre_wait_freezes": 10,
         "next": "放弃2"
     },
     "放弃2": {
         "recognition": "OCR",
         "expected": "放弃",
         "action": "Click",
+        "next": "waitFq2"
+    },
+    "waitFq2": {
+        "pre_wait_freezes": 15,
         "next": "确认放弃2"
     },
     "确认放弃2": {
@@ -237,23 +245,27 @@
 
 
     "wait4": {
-        "pre_wait_freezes": 5,
+        "pre_wait_freezes": 10,
         "next": "术师"
     },
     "术师": {
         "recognition": "OCR",
         "expected": "招募一个术师",
         "action": "Click",
-        "next": "放弃3"
+        "next": "wait5"
     },
     "wait5": {
-        "pre_wait_freezes": 5,
+        "pre_wait_freezes": 15,
         "next": "放弃3"
     },
     "放弃3": {
         "recognition": "OCR",
         "expected": "放弃",
         "action": "Click",
+        "next": "waitFq3"
+    },
+    "waitFq3": {
+        "pre_wait_freezes": 15,
         "next": "确认放弃3"
     },
     "确认放弃3": {
@@ -265,7 +277,7 @@
 
 
     "wait6": {
-        "pre_wait_freezes": 5,
+        "pre_wait_freezes": 10,
         "next": "开始讲述"
     },
     "开始讲述": {
@@ -498,7 +510,10 @@
         "recognition": "OCR",
         "expected": "投资入口",
         "action": "Click",
-        "next": "确认投资"
+        "next": [
+            "上限判定1",
+            "确认投资"
+        ]
     },
     "确认投资": {
         "recognition": "OCR",
@@ -509,11 +524,23 @@
     "pre_wait_freezes7": {
         "pre_wait_freezes": 5,
         "next": [
+            "上限判定2",
+            "上限判定1",
             "源石锭不足",
             "本次探索无法再使用",
             "确认投资",
             "pre_wait_freezes7"
         ]
+    },
+    "上限判定1": {
+        "recognition": "OCR",
+        "expected": "1000",
+        "next": "算了，任务结束"
+    },
+    "上限判定2": {
+        "recognition": "OCR",
+        "expected": "当前储备余额已达上限",
+        "next": "算了，任务结束"
     },
     "源石锭不足": {
         "recognition": "OCR",
@@ -551,7 +578,6 @@
         "action": "Click",
         "next": "结算页面"
     },
-
     "结算页面": {
         "recognition": "TemplateMatch",
         "template": "空白退出.png",
@@ -561,5 +587,48 @@
             "启用参数",
             "结算页面"
         ]
+    },
+
+
+    "算了，任务结束": {
+        "action": "Click",
+        "next": "算了2，任务结束"
+    },
+    "算了2，任务结束": {
+        "action": "Click",
+        "next": "退出商店，任务结束"
+    },
+    "退出商店，任务结束": {
+        "recognition": "FeatureMatch",
+        "template": "退出商店.png",
+        "action": "Click",
+        "next": "放弃本次探索，任务结束"
+    },
+    "放弃本次探索，任务结束": {
+        "recognition": "OCR",
+        "expected": "放弃本次探索",
+        "action": "Click",
+        "next": "确认放弃4，任务结束"
+    },
+    "确认放弃4，任务结束": {
+        "recognition": "FeatureMatch",
+        "template": "确认放弃.png",
+        "action": "Click",
+        "next": "结算页面，任务结束"
+    },
+    "结算页面，任务结束": {
+        "recognition": "TemplateMatch",
+        "template": "空白退出.png",
+        "threshold": 0.4,
+        "action": "Click",
+        "next": [
+            "任务结束",
+            "结算页面，任务结束"
+        ]
+    },
+    "任务结束": {
+        "recognition": "OCR",
+        "expected": "启用参数",
+        "action": "StopTask"
     }
 }
