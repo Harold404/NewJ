@@ -1,5 +1,5 @@
 {
-    "点击明日方舟": {
+    "明日方舟启动": {
         "recognition": "FeatureMatch",
         "template": "z.png",
         "action": "Click",
@@ -22,10 +22,10 @@
         "template": "X.png",
         "threshold": 0.4,
         "action": "Click",
-        "next": "全部完成"
+        "next": "游戏主界面"
     },
 
-    "全部完成": {
+    "游戏主界面": {
         "recognition": "OCR",
         "expected": "全部完成",
         "action": "Click",
@@ -35,9 +35,9 @@
         "recognition": "OCR",
         "expected": "萨卡兹的无终奇语",
         "action": "Click",
-        "next": "参数启用与否"
+        "next": "萨卡兹主界面"
     },
-    "参数启用与否": {
+    "萨卡兹主界面": {
         "next": [
             "参数已启用",
             "启用参数"
@@ -325,6 +325,10 @@
         "template": "空白退出.png",
         "threshold": 0.4,
         "action": "Click",
+        "next": "选择等待1_1"
+    },
+    "选择等待1_1": {
+        "pre_wait_freezes": 10,
         "next": "节点一选择1"
     },
     "节点一选择1": {
@@ -392,6 +396,10 @@
         "template": "空白退出.png",
         "threshold": 0.4,
         "action": "Click",
+        "next": "选择等待2_1"
+    },
+    "选择等待2_1": {
+        "pre_wait_freezes": 10,
         "next": "节点二选择1"
     },
     "节点二选择1": {
@@ -457,6 +465,10 @@
         "template": "空白退出.png",
         "threshold": 0.4,
         "action": "Click",
+        "next": "选择等待3_1"
+    },
+    "选择等待3_1": {
+        "pre_wait_freezes": 10,
         "next": "节点三选择1"
     },
     "节点三选择1": {
