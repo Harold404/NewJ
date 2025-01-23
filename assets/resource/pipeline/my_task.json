@@ -212,7 +212,8 @@
     },
     "waitFq1": {
         "pre_wait_freezes": 15,
-        "next": "确认放弃1"
+        "next": ["确认放弃1",
+        "waitFq1"]
     },
     "确认放弃1": {
         "recognition": "FeatureMatch",
@@ -235,7 +236,8 @@
     },
     "wait3": {
         "pre_wait_freezes": 10,
-        "next": "放弃2"
+        "next": ["放弃2",
+        "wait3"]
     },
     "放弃2": {
         "recognition": "OCR",
@@ -245,7 +247,8 @@
     },
     "waitFq2": {
         "pre_wait_freezes": 15,
-        "next": "确认放弃2"
+        "next": ["确认放弃2",
+        "waitFq2"]
     },
     "确认放弃2": {
         "recognition": "FeatureMatch",
@@ -268,7 +271,8 @@
     },
     "wait5": {
         "pre_wait_freezes": 15,
-        "next": "放弃3"
+        "next": ["放弃3",
+        "wait5"]
     },
     "放弃3": {
         "recognition": "OCR",
@@ -278,7 +282,8 @@
     },
     "waitFq3": {
         "pre_wait_freezes": 15,
-        "next": "确认放弃3"
+        "next": ["确认放弃3",
+        "waitFq3"]
     },
     "确认放弃3": {
         "recognition": "FeatureMatch",
@@ -290,7 +295,8 @@
 
     "wait6": {
         "pre_wait_freezes": 10,
-        "next": "开始讲述"
+        "next": ["开始讲述",
+        "wait6"]
     },
     "开始讲述": {
         "recognition": "OCR",
@@ -300,7 +306,8 @@
     },
     "pre_wait_freezes2": {
         "pre_wait_freezes": 1000,
-        "next": "坏邻居"
+        "next": ["坏邻居",
+        "pre_wait_freezes2"]
     },
     "坏邻居": {
         "recognition": "OCR",
