@@ -188,7 +188,10 @@
 
     "wait0": {
         "pre_wait_freezes": 10,
-        "next": "近卫"
+        "next": [
+            "近卫",
+            "wait0"
+        ]
     },
     "近卫": {
         "recognition": "OCR",
@@ -198,7 +201,8 @@
     },
     "wait1": {
         "pre_wait_freezes": 10,
-        "next": "放弃1"
+        "next": ["放弃1",
+        "wait1"]
     },
     "放弃1": {
         "recognition": "OCR",
@@ -220,7 +224,8 @@
 
     "wait2": {
         "pre_wait_freezes": 10,
-        "next": "重装"
+        "next": ["重装",
+        "wait2"]
     },
     "重装": {
         "recognition": "OCR",
@@ -252,7 +257,8 @@
 
     "wait4": {
         "pre_wait_freezes": 10,
-        "next": "术师"
+        "next": ["术师",
+        "wait4"]
     },
     "术师": {
         "recognition": "OCR",
