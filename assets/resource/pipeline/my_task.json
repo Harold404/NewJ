@@ -3,8 +3,13 @@
         "recognition": "FeatureMatch",
         "template": "z.png",
         "action": "Click",
-        "next": "Click start"
+        "next": ["Click start",
+        "waitStart"]
         },
+    "waitStart": {
+        "pre_wait_freezes": 100,
+        "next": "明日方舟启动"
+    },
     "Click start": {
         "recognition": "FeatureMatch",
         "template": "start.png",
@@ -150,21 +155,26 @@
     "pre_wait_freezes1": {
         "pre_wait_freezes": 1000,
         "next": [
-            "选择支援",
             "后勤分队",
-            "滑动"
+            "滑动",
+            "pre_wait_freezes1"
+        ]
+    },
+
+    "后勤分队": {
+        "recognition": "OCR",
+        "expected": "后勤分队",
+        "action": "Click",
+        "next": [
+            "你确定要这么做1",
+            "选择支援",
+            "后勤分队"
         ]
     },
     "选择支援": {
         "recognition": "OCR",
         "expected": "选择支援",
         "next": "退出商店"
-    },
-    "后勤分队": {
-        "recognition": "OCR",
-        "expected": "后勤分队",
-        "action": "Click",
-        "next": "你确定要这么做1"
     },
     "你确定要这么做1": {
         "recognition": "OCR",
@@ -380,7 +390,7 @@
 
 
     "pre_wait_freezes3": {
-        "pre_wait_freezes": 1000,
+        "pre_wait_freezes": 2000,
         "next": "滑动2"
     },
     "滑动2": {
@@ -395,10 +405,20 @@
     },
     "pre_wait_freezes4": {
         "pre_wait_freezes": 1000,
-        "next": "节点二"
+        "next": [
+            "节点二1",
+            "节点二0"
+        ]
     },
-    "节点二": {
-        "recognition": "TemplateMatch",
+    "节点二1": {
+        "recognition": "FeatureMatch",
+        "template": "不期而遇.png",
+        "index": 1,
+        "action": "Click",
+        "next": "出发前往2"
+    },
+    "节点二0": {
+        "recognition": "FeatureMatch",
         "template": "不期而遇.png",
         "index": 0,
         "action": "Click",
@@ -450,7 +470,7 @@
 
 
     "pre_wait_freezes5": {
-        "pre_wait_freezes": 1000,
+        "pre_wait_freezes": 2000,
         "next": "滑动3"
     },
     "滑动3": {
@@ -465,11 +485,22 @@
     },
     "pre_wait_freezes6": {
         "pre_wait_freezes": 1000,
-        "next": "节点三"
+        "next": [
+            "节点三1",
+            "节点三0"
+        ]
     },
-    "节点三": {
+    "节点三1": {
         "recognition": "TemplateMatch",
         "template": "不期而遇.png",
+        "index": 1,
+        "action": "Click",
+        "next": "出发前往3"
+    },
+    "节点三0": {
+        "recognition": "TemplateMatch",
+        "template": "不期而遇.png",
+        "index": 0,
         "action": "Click",
         "next": "出发前往3"
     },
@@ -514,11 +545,17 @@
         "template": "空白退出.png",
         "threshold": 0.4,
         "action": "Click",
-        "next": "诡意行商"
+        "next": "pre_wait_freezes_gg"
     },
 
 
-
+    "pre_wait_freezes_gg": {
+        "pre_wait_freezes": 10,
+        "next": [
+            "诡意行商",
+            "回一层主界面4"
+        ]
+    },
     "诡意行商": {
         "recognition": "OCR",
         "expected": "诡意行商",
