@@ -426,7 +426,6 @@
     "节点二0": {
         "recognition": "FeatureMatch",
         "template": "不期而遇.png",
-        "index": 0,
         "action": "Click",
         "next": "出发前往2"
     },
@@ -506,7 +505,6 @@
     "节点三0": {
         "recognition": "TemplateMatch",
         "template": "不期而遇.png",
-        "index": 0,
         "action": "Click",
         "next": "出发前往3"
     },
