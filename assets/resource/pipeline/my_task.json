@@ -166,9 +166,15 @@
         "expected": "后勤分队",
         "action": "Click",
         "next": [
-            "你确定要这么做1",
+            "wait_choose"
+        ]
+    },
+    "wait_choose": {
+        "pre_wait_freezes": 100,
+        "next": [
             "选择支援",
-            "后勤分队"
+            "你确定要这么做1",
+            "wait_choose"
         ]
     },
     "选择支援": {
